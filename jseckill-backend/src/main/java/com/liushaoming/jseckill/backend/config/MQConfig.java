@@ -76,9 +76,9 @@ public class MQConfig {
         //密码
         factory.setPassword(password);
         //虚拟主机路径（相当于数据库名）
-        factory.setVirtualHost(virtualHost);
+       // factory.setVirtualHost(virtualHost);
         //返回连接
-        return factory.newConnection(mqConfigBean.getAddressList());
+        return factory.newConnection();
     }
 
     @Bean("mqConnectionReceive")
@@ -89,9 +89,7 @@ public class MQConfig {
         //密码
         factory.setPassword(password);
         //虚拟主机路径（相当于数据库名）
-        factory.setVirtualHost(virtualHost);
-        //返回连接
-        return factory.newConnection(mqConfigBean.getAddressList());
+        return factory.newConnection();
     }
 }
 

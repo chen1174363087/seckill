@@ -45,6 +45,13 @@ public class SeckillController {
         return "list";
     }
 
+    /**
+     * list页面点击执行
+     *
+     * @param seckillId
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/detail/{seckillId}", method = RequestMethod.GET)
     public String detail(@PathVariable("seckillId") Long seckillId, Model model) {
         if (seckillId == null) {
@@ -74,6 +81,14 @@ public class SeckillController {
         return result;
     }
 
+    /**
+     * 真正秒杀点击执行
+     *
+     * @param seckillId
+     * @param phone
+     * @param md5
+     * @return
+     */
     @RequestMapping(value = "/execution/{seckillId}/{phone}/{md5}",
             method = RequestMethod.POST,
             produces = {"application/json;charset=UTF-8"})
